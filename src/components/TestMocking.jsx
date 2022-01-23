@@ -26,6 +26,19 @@ export default function TestMocking() {
         setError(`Something Worng: ${error}`);
       });
   };
+
+  const handleClick2 = () => {
+    fetch("/login")
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        console.log(JSON.stringify(response));
+      })
+      .catch((error) => {
+        setError(`Something Worng: ${error}`);
+      });
+  };
   if (error) {
     return <p>{error}</p>;
   }
@@ -33,6 +46,7 @@ export default function TestMocking() {
   return (
     <div>
       <button onClick={handleClick}>데이터가져오기</button>
+      <button onClick={handleClick2}>데이터가져오기2</button>
       {data && (
         <ul>
           {data.people.map((person) => (
