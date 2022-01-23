@@ -5,6 +5,7 @@
 
 import ReduxStudy from "./components/ReduxStudy.tsx";
 import TestMocking from "./components/TestMocking";
+import Counter from "./features/counter/Counter";
 function App() {
   // Mui연습
   // const theme = createTheme({
@@ -42,7 +43,8 @@ function App() {
     //   </ThemeProvider>
     // </ThemeProvider>
     <>
-      <ReduxStudy />
+      <Counter />
+      {/* <ReduxStudy /> */}
       <TestMocking />
     </>
   );
