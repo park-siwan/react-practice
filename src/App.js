@@ -4,6 +4,7 @@
 // import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import ReduxStudy from "./components/ReduxStudy.tsx";
+import TestMocking from "./components/TestMocking";
 function App() {
   // Mui연습
   // const theme = createTheme({
@@ -40,7 +41,10 @@ function App() {
     //     <MuiPractice />
     //   </ThemeProvider>
     // </ThemeProvider>
-    <ReduxStudy />
+    <>
+      <ReduxStudy />
+      <TestMocking />
+    </>
   );
 }
 
