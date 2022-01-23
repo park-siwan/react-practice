@@ -19,22 +19,26 @@ export const handlers = [
       const originalResponseData = await originalResponse.json();
 
       return res(
+        ctx.status(403),
         ctx.json({
-          data: {
-            people: [
-              ...originalResponseData.data.people,
-              {
-                name: id,
-                age: 28,
-                id: id,
-              },
-              {
-                name: "timmy",
-                age: 13,
-              },
-            ],
-          },
+          errorMessage: `Data not Found`,
         })
+        // ctx.json({
+        //   data: {
+        //     people: [
+        //       ...originalResponseData.data.people,
+        //       {
+        //         name: id,
+        //         age: 28,
+        //         id: id,
+        //       },
+        //       {
+        //         name: "timmy",
+        //         age: 13,
+        //       },
+        //     ],
+        //   },
+        // })
       );
     }
   ),

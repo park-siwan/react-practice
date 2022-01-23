@@ -20,6 +20,9 @@ export default function TestMocking() {
         return response.json();
       })
       .then((json) => {
+        if (json.errorMessage) {
+          throw new Error(json.errorMessage);
+        }
         setData(json.data);
       })
       .catch((error) => {
@@ -45,7 +48,7 @@ export default function TestMocking() {
 
   return (
     <div>
-      <button onClick={handleClick}>데이터가져오기</button>
+      <button onClick={handleClick}>json데이터가져오기</button>
       <button onClick={handleClick2}>데이터가져오기2(로그인)</button>
       {data && (
         <ul>
