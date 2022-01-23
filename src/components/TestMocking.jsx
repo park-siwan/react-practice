@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-const Item = ({ name, age }) => {
+const Item = ({ name, age, id }) => {
   return (
     <li>
-      name: {name} / age: {age}
+      name: {name} / age: {age} / id: {id}
     </li>
   );
 };
 
 const url =
-  "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json";
+  "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json?id=3168";
 
 export default function TestMocking() {
   const [data, setData] = useState(null);
@@ -54,6 +54,7 @@ export default function TestMocking() {
               key={`${person.name}-${person.age}`}
               name={person.name}
               age={person.age}
+              id={person?.id}
             />
           ))}
         </ul>

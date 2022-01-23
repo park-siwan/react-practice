@@ -11,35 +11,21 @@ export const handlers = [
     );
   }),
   rest.get(
-    "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json",
+    "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json?id=3168",
     async (req, res, ctx) => {
+      const id = req.url.searchParams.get("id");
       return res(
         ctx.json({
           data: {
             people: [
               {
-                name: "siwan",
+                name: id,
                 age: 28,
+                id: id,
               },
               {
                 name: "timmy",
                 age: 13,
-              },
-              {
-                name: "cindy",
-                age: 15,
-              },
-              {
-                name: "judy",
-                age: 25,
-              },
-              {
-                name: "marry",
-                age: 64,
-              },
-              {
-                name: "tommy",
-                age: 109,
               },
             ],
           },
