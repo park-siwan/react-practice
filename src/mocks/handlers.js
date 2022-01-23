@@ -14,10 +14,15 @@ export const handlers = [
     "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json?id=3168",
     async (req, res, ctx) => {
       const id = req.url.searchParams.get("id");
+
+      const originalResponse = await ctx.fetch(req);
+      const originalResponseData = await originalResponse.json();
+
       return res(
         ctx.json({
           data: {
             people: [
+              ...originalResponseData.data.people,
               {
                 name: id,
                 age: 28,
