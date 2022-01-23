@@ -3,6 +3,7 @@
 // import { blue, green, red } from "@mui/material/colors";
 // import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+import Counter2 from "./components/Counter2";
 import ReduxStudy from "./components/ReduxStudy.tsx";
 import TestMocking from "./components/TestMocking";
 import Counter from "./features/counter/Counter";
@@ -44,6 +45,11 @@ function App() {
     // </ThemeProvider>
     <>
       <Counter />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Counter2 />
       {/* <ReduxStudy /> */}
       <TestMocking />
     </>
