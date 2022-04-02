@@ -2,9 +2,24 @@ import React from 'react';
 import { SWRConfig, useSWRConfig } from 'swr';
 import { Avatar } from './Profile';
 
+function localStorageProvider() {
+  const map = new Map(JSON.parse(localStorage.getItem('app-cache') || '[]'));
+
+  window.addEventListener('beforeunload', () => {
+    const appCache = JSON.stringify(Array.from(map.entries()));
+    localStorage.setItem('app-cache', appCache);
+  });
+  return map;
+}
+
 export default function Cache() {
   return (
-    <SWRConfig value={{ refreshInterval: 1000 }}>
+    // <SWRConfig value={{ refreshInterval: 1000 }}>
+    //로컬스토리지 데이터도 지속되게(persistent) 할 수 있다.
+    <SWRConfig
+      value={{ refreshInterval: 1000, provider: localStorageProvider }}
+    >
+      {/* <SWRConfig> */}
       <Page />
     </SWRConfig>
   );
