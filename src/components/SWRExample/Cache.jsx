@@ -4,7 +4,7 @@ import { Avatar } from './Profile';
 
 export default function Cache() {
   return (
-    <SWRConfig>
+    <SWRConfig value={{ refreshInterval: 1000 }}>
       <Page />
     </SWRConfig>
   );
