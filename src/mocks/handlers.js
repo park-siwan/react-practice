@@ -1,44 +1,44 @@
-import { rest } from "msw";
+import { rest } from 'msw';
 
 export const handlers = [
-  rest.get("/login", async (req, res, ctx) => {
+  rest.get('http://localhost:3000/api/user/:userId', async (req, res, ctx) => {
+    const { userId } = req.params;
     return res(
       ctx.json({
-        id: "123",
-        firstname: "park",
-        lastName: "siwan",
+        name: `Siwan (${userId})`,
       })
     );
+    // return res(ctx.json({ name: id === '1' ? 'The one' : 'The others' }));
   }),
   rest.get(
-    "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json?id=3168",
+    'https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json?id=3168',
     async (req, res, ctx) => {
-      const id = req.url.searchParams.get("id");
+      const id = req.url.searchParams.get('id');
 
       const originalResponse = await ctx.fetch(req);
       const originalResponseData = await originalResponse.json();
 
       return res(
-        ctx.status(403),
-        ctx.json({
-          errorMessage: `Data not Found`,
-        })
+        // ctx.status(403),
         // ctx.json({
-        //   data: {
-        //     people: [
-        //       ...originalResponseData.data.people,
-        //       {
-        //         name: id,
-        //         age: 28,
-        //         id: id,
-        //       },
-        //       {
-        //         name: "timmy",
-        //         age: 13,
-        //       },
-        //     ],
-        //   },
+        //   errorMessage: `Data not Found`,
         // })
+        ctx.json({
+          data: {
+            people: [
+              ...originalResponseData.data.people,
+              {
+                name: id,
+                age: 28,
+                id: id,
+              },
+              {
+                name: 'timmy',
+                age: 13,
+              },
+            ],
+          },
+        })
       );
     }
   ),

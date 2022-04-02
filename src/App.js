@@ -3,10 +3,11 @@
 // import { blue, green, red } from "@mui/material/colors";
 // import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import Counter2 from "./components/Counter2";
-import ReduxStudy from "./components/ReduxStudy.tsx";
-import TestMocking from "./components/TestMocking";
-import Counter from "./features/counter/Counter";
+import Counter2 from './components/Counter2';
+import ReduxStudy from './components/ReduxStudy.tsx';
+import Profile from './components/SWRExample/Profile';
+import TestMocking from './components/TestMocking';
+import Counter from './features/counter/Counter';
 function App() {
   // Mui연습
   // const theme = createTheme({
@@ -43,15 +44,18 @@ function App() {
     //     <MuiPractice />
     //   </ThemeProvider>
     // </ThemeProvider>
+
     <>
+      <h1>리액트연습</h1>
+      <h2>카운터</h2>
       <Counter />
       <br />
-      <br />
-      <br />
-      <br />
+      <h2>리덕스</h2>
       <Counter2 />
+      <h2>데이터 모킹 라이브러리</h2>
       {/* <ReduxStudy /> */}
       <TestMocking />
+      <Profile />
     </>
   );
 }
