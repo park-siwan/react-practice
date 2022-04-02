@@ -5,6 +5,7 @@
 
 import Counter2 from './components/Counter2';
 import ReduxStudy from './components/ReduxStudy.tsx';
+import Cache from './components/SWRExample/Cache';
 import Profile from './components/SWRExample/Profile';
 import TestMocking from './components/TestMocking';
 import Counter from './features/counter/Counter';
@@ -55,7 +56,10 @@ function App() {
       <h2>데이터 모킹 라이브러리</h2>
       {/* <ReduxStudy /> */}
       <TestMocking />
+      <h2>데이터 페칭 라이브러리</h2>
+      <h3>SWR</h3>
       <Profile />
+      <Cache />
     </>
   );
 }

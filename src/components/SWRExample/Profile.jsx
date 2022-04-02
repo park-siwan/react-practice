@@ -34,7 +34,7 @@ function Profile({ id }) {
   );
 }
 
-function Avatar({ id }) {
+export function Avatar({ id }) {
   const { user, isLoading, isError } = useUser(id);
   if (isError) return <div>failed to load(Avatar)</div>;
   if (isLoading) return <div>loading...(Avatar)</div>;
