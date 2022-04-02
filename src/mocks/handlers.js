@@ -8,6 +8,8 @@ export const handlers = [
         name: `Siwan (${userId})`,
       })
     );
+    //에러가 나면 default로 5초에 한번씩 재시도함
+    // return res(ctx.status(400));
     // return res(ctx.json({ name: id === '1' ? 'The one' : 'The others' }));
   }),
   rest.get(

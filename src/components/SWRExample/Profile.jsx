@@ -4,10 +4,10 @@ import useSWR from 'swr';
 
 const fetcher = (...args) => axios.get(...args).then((res) => res.data);
 function useUser(id) {
-  const refresh = {
-    refreshInterval: 1000,
-  };
-  const { data, error } = useSWR(`/api/user/${id}`, fetcher, refresh);
+  // const refresh = {
+  //   refreshInterval: 1000,
+  // };
+  const { data, error } = useSWR(`/api/user/${id}`, fetcher);
   return {
     user: data,
     isLoading: !error && !data,
@@ -29,7 +29,7 @@ function Profile({ id }) {
   return (
     <>
       <div>hellow {user.name}</div>
-      <Avatar id={123} />
+      {/* <Avatar id={123} /> */}
     </>
   );
 }
