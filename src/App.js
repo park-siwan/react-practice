@@ -8,6 +8,7 @@ import ReduxStudy from './components/ReduxStudy.tsx';
 import Cache from './components/SWRExample/Cache';
 import Feacher from './components/SWRExample/Feacher';
 import Mutate from './components/SWRExample/Mutate';
+import Pagenation from './components/SWRExample/Pagenation';
 import Profile from './components/SWRExample/Profile';
 import TestMocking from './components/TestMocking';
 import Counter from './features/counter/Counter';
@@ -67,6 +68,7 @@ function App() {
       <h4>에러 핸들링</h4>
       {/* <Feacher /> */}
       <Mutate />
+      <Pagenation />
     </>
   );
 }
