@@ -7,6 +7,7 @@ import Counter2 from './components/Counter2';
 import ReduxStudy from './components/ReduxStudy.tsx';
 import Cache from './components/SWRExample/Cache';
 import Feacher from './components/SWRExample/Feacher';
+import Mutate from './components/SWRExample/Mutate';
 import Profile from './components/SWRExample/Profile';
 import TestMocking from './components/TestMocking';
 import Counter from './features/counter/Counter';
@@ -64,7 +65,8 @@ function App() {
       <h4>캐시 다루기</h4>
       {/* <Cache /> */}
       <h4>에러 핸들링</h4>
-      <Feacher />
+      {/* <Feacher /> */}
+      <Mutate />
     </>
   );
 }
