@@ -4,6 +4,7 @@
 // import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import Counter2 from './components/Counter2';
+import Example from './components/ReactQueryExample/Example';
 import ReduxStudy from './components/ReduxStudy.tsx';
 import Cache from './components/SWRExample/Cache';
 import Feacher from './components/SWRExample/Feacher';
@@ -67,8 +68,10 @@ function App() {
       {/* <Cache /> */}
       <h4>에러 핸들링</h4>
       {/* <Feacher /> */}
-      <Mutate />
-      <Pagenation />
+      {/* <Mutate /> */}
+      {/* <Pagenation /> */}
+      <h3>React-query</h3>
+      <Example />
     </>
   );
 }
