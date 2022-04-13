@@ -6,6 +6,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Counter2 from './components/Counter2';
 import Example from './components/ReactQueryExample/Example';
+import QuickStart from './components/ReactQueryExample/QuickStart';
 import ReduxStudy from './components/ReduxStudy.tsx';
 import Cache from './components/SWRExample/Cache';
 import Feacher from './components/SWRExample/Feacher';
@@ -75,6 +76,7 @@ function App() {
       <h3>React-query</h3>
       <QueryClientProvider client={queryClient}>
         <Example />
+        <QuickStart />
       </QueryClientProvider>
     </>
   );
