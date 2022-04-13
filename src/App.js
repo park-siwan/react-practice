@@ -3,6 +3,7 @@
 // import { blue, green, red } from "@mui/material/colors";
 // import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+import { QueryClient, QueryClientProvider } from 'react-query';
 import Counter2 from './components/Counter2';
 import Example from './components/ReactQueryExample/Example';
 import ReduxStudy from './components/ReduxStudy.tsx';
@@ -13,6 +14,7 @@ import Pagenation from './components/SWRExample/Pagenation';
 import Profile from './components/SWRExample/Profile';
 import TestMocking from './components/TestMocking';
 import Counter from './features/counter/Counter';
+const queryClient = new QueryClient();
 function App() {
   // Mui연습
   // const theme = createTheme({
@@ -71,7 +73,9 @@ function App() {
       {/* <Mutate /> */}
       {/* <Pagenation /> */}
       <h3>React-query</h3>
-      <Example />
+      <QueryClientProvider client={queryClient}>
+        <Example />
+      </QueryClientProvider>
     </>
   );
 }

@@ -1,16 +1,7 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 
-const queryClient = new QueryClient();
-
 export default function Example() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Page />
-    </QueryClientProvider>
-  );
-}
-const Page = () => {
   const { isLoading, error, data } = useQuery('repoData', () =>
     fetch(
       'https://api.github.com/repos/tannerlinsley/react-query'
@@ -30,4 +21,4 @@ const Page = () => {
       <strong>🍴 {data.forks_count}</strong>
     </div>
   );
-};
+}
