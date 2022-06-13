@@ -17,6 +17,7 @@ import TestMocking from './components/TestMocking';
 import Counter from './features/counter/Counter';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import Pagination from './components/ReactQueryExample/Pagination';
+import InfiniteScroll from './components/ReactQueryExample/InfiniteScroll';
 const queryClient = new QueryClient();
 function App() {
   // Mui연습
@@ -79,7 +80,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
         {/* <Example /> */}
         {/* <QuickStart /> */}
-        <Pagination />
+        {/* <Pagination /> */}
+        <InfiniteScroll />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>

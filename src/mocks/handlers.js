@@ -120,6 +120,7 @@ export const handlers = [
           },
         ],
         hasMore: pageIndex < 4,
+        nextCursor: pageIndex + 1,
       })
     );
   }),
