@@ -15,6 +15,8 @@ import Pagenation from './components/SWRExample/Pagenation';
 import Profile from './components/SWRExample/Profile';
 import TestMocking from './components/TestMocking';
 import Counter from './features/counter/Counter';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import Pagination from './components/ReactQueryExample/Pagination';
 const queryClient = new QueryClient();
 function App() {
   // Mui연습
@@ -54,29 +56,31 @@ function App() {
     // </ThemeProvider>
 
     <>
-      <h1>리액트연습</h1>
-      <h2>카운터</h2>
+      {/* <h1>리액트연습</h1> */}
+      {/* <h2>카운터</h2> */}
       {/* <Counter /> */}
-      <br />
-      <h2>리덕스</h2>
+      {/* <br /> */}
+      {/* <h2>리덕스</h2> */}
       {/* <Counter2 /> */}
-      <h2>데이터 모킹 라이브러리</h2>
+      {/* <h2>데이터 모킹 라이브러리</h2> */}
       {/* <ReduxStudy /> */}
       {/* <TestMocking /> */}
-      <h2>데이터 페칭 라이브러리</h2>
-      <h3>SWR</h3>
-      <h4>기본</h4>
+      {/* <h2>데이터 페칭 라이브러리</h2> */}
+      {/* <h3>SWR</h3> */}
+      {/* <h4>기본</h4> */}
       {/* <Profile /> */}
-      <h4>캐시 다루기</h4>
+      {/* <h4>캐시 다루기</h4> */}
       {/* <Cache /> */}
-      <h4>에러 핸들링</h4>
+      {/* <h4>에러 핸들링</h4> */}
       {/* <Feacher /> */}
       {/* <Mutate /> */}
       {/* <Pagenation /> */}
       <h3>React-query</h3>
       <QueryClientProvider client={queryClient}>
-        <Example />
-        <QuickStart />
+        {/* <Example /> */}
+        {/* <QuickStart /> */}
+        <Pagination />
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   );
